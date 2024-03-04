@@ -231,16 +231,12 @@ public class UTAdResponse {
 
 
                 if (contentSource != null && contentSource.equalsIgnoreCase(UTConstants.CSM)) {
-                    Clog.e(Clog.httpRespLogTag,"TEST MESSI 1");
                     handleCSM(ad, adType, notifyUrl, adResponseInfo);
                 } else if (contentSource != null && contentSource.equalsIgnoreCase(UTConstants.SSM)) {
-                    Clog.e(Clog.httpRespLogTag,"TEST MESSI 2");
                     handleSSM(ad, adType, adResponseInfo);
                 } else if (contentSource != null && contentSource.equalsIgnoreCase(UTConstants.RTB)) {
-                    Clog.e(Clog.httpRespLogTag,"TEST MESSI 3");
                     handleRTB(ad, adType, notifyUrl, adResponseInfo);
                 } else if (UTConstants.CSR.equalsIgnoreCase(contentSource)) {
-                    Clog.e(Clog.httpRespLogTag,"TEST MESSI 4");
                     handleCSR(ad, adType, notifyUrl, adResponseInfo);
                 } else {
                     Clog.e(Clog.httpRespLogTag, "handleAdResponse unknown content_source");

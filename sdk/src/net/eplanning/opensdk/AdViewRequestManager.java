@@ -316,37 +316,26 @@ public class AdViewRequestManager extends RequestManager {
 
 
     private void handleRTBResponse(Ad ownerAd, BaseAdResponse rtbAdResponse) {
-        Clog.e(Clog.baseLogTag, "TEST FIDEO 1");
         if (rtbAdResponse instanceof RTBVASTAdResponse && !(ownerAd instanceof BannerAdView)) {
-            Clog.e(Clog.baseLogTag, "TEST FIDEO 2");
             if (rtbAdResponse.getAdContent() != null) {
-                Clog.e(Clog.baseLogTag, "TEST FIDEO 22");
                 if (UTConstants.AD_TYPE_VIDEO.equalsIgnoreCase(rtbAdResponse.getAdType())) {
                     // Vast ads
-                    Clog.e(Clog.baseLogTag, "TEST FIDEO 24");
                     handleRTBVASTResponse(ownerAd, (RTBVASTAdResponse) rtbAdResponse);
                 } else {
-                    Clog.e(Clog.baseLogTag, "TEST FIDEO 25");
                     continueWaterfall(ResultCode.getNewInstance(ResultCode.UNABLE_TO_FILL));
                 }
             } else {
-                Clog.e(Clog.baseLogTag, "TEST FIDEO 23");
                 continueWaterfall(ResultCode.getNewInstance(ResultCode.UNABLE_TO_FILL));
             }
         } else if (rtbAdResponse instanceof RTBNativeAdResponse) {
-            Clog.e(Clog.baseLogTag, "TEST FIDEO 3");
             handleNativeResponse(ownerAd, rtbAdResponse);
         } else {
-            Clog.e(Clog.baseLogTag, "TEST FIDEO 4");
             if (rtbAdResponse.getAdContent() != null) {
-                Clog.e(Clog.baseLogTag, "TEST FIDEO 5");
                 if (UTConstants.AD_TYPE_BANNER.equalsIgnoreCase(rtbAdResponse.getAdType()) ||
                         UTConstants.AD_TYPE_VIDEO.equalsIgnoreCase(rtbAdResponse.getAdType())) {
 
-                    Clog.e(Clog.baseLogTag, "TEST FIDEO 6");
                     // Fire Notify URL - Currently only for Video Ad's
                     if (UTConstants.AD_TYPE_VIDEO.equalsIgnoreCase(rtbAdResponse.getAdType())) {
-                        Clog.e(Clog.baseLogTag, "TEST FIDEO 7");
                         fireTracker(((RTBVASTAdResponse) rtbAdResponse).getNotifyUrl(), Clog.getString(R.string.notify_url));
                     }
 
@@ -374,11 +363,8 @@ public class AdViewRequestManager extends RequestManager {
     }
 
     private void handleRTBVASTResponse(final Ad owner, final RTBVASTAdResponse rtbAdResponse) {
-        Clog.e(Clog.baseLogTag, "TEST CUTI 1");
         if (!StringUtil.isEmpty(rtbAdResponse.getAdContent())) {
-            Clog.e(Clog.baseLogTag, "TEST CUTI 2");
             fireNotifyUrlForVideo(rtbAdResponse);
-            Clog.e(Clog.baseLogTag, "TEST CUTI 3");
             if (rtbAdResponse != null && rtbAdResponse.getAdContent() != null) {
                 owner.getMultiAd().initiateVastAdView(rtbAdResponse, this);
             } else {

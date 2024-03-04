@@ -137,11 +137,9 @@ public class UTAdRequest {
         Clog.logTime(getClass().getSimpleName() + " - makeRequest");
         HashMap<String, UTAdResponse> adResponseMap = new HashMap<>();
         try {
-            Clog.e(Clog.httpReqLogTag,"test DIBU 1");
             Settings.getSettings().deviceAccessAllowed = ANGDPRSettings.canIAccessDeviceData(requestParams.getContext()); // Make sure GDPR device access is allowed.
             String baseUrl = Settings.getAdRequestUrl();
             URL url = new URL(baseUrl);
-            Clog.e(Clog.httpReqLogTag,"test DIBU 2");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setDoOutput(true);
             conn.setDoInput(true);
@@ -149,24 +147,21 @@ public class UTAdRequest {
             conn.setRequestProperty("Accept", "application/json");
             conn.setRequestProperty("Accept-Language", Settings.getSettings().language);
             conn.setRequestProperty("User-Agent", Settings.getSettings().ua);
-            Clog.e(Clog.httpReqLogTag,"test DIBU 3");
             if (Settings.getSettings().deviceAccessAllowed && !Settings.getSettings().doNotTrack) {
                 String cookieString = WebviewUtil.getCookie();
                 if (!TextUtils.isEmpty(cookieString)) {
                     conn.setRequestProperty("Cookie", cookieString);
                 }
             }
-            Clog.e(Clog.httpReqLogTag,"test DIBU 4");
             if(Settings.getSettings().test_mode){
                 conn.setRequestProperty("X-Is-Test", "1");
             }
-            Clog.e(Clog.httpReqLogTag,"test DIBU 5");
 
             conn.setRequestMethod("POST");
 
-            //conn.setConnectTimeout(Settings.HTTP_CONNECTION_TIMEOUT);
-            //conn.setReadTimeout(Settings.HTTP_SOCKET_TIMEOUT);
-            Clog.e(Clog.httpReqLogTag,"test DIBU 5");
+            conn.setConnectTimeout(Settings.HTTP_CONNECTION_TIMEOUT);
+            conn.setReadTimeout(Settings.HTTP_SOCKET_TIMEOUT);
+
             // Make post request
             String postData = requestParams.getPostData();
             Clog.setLastRequest(postData);
@@ -174,10 +169,8 @@ public class UTAdRequest {
             wr.write(postData);
             wr.flush();
 
-            Clog.e(Clog.httpReqLogTag,"test DIBU 6");
             // Start the connection
             conn.connect();
-            Clog.e(Clog.httpReqLogTag,"test DIBU 7");
             // Read request response
             int httpResult = conn.getResponseCode();
 

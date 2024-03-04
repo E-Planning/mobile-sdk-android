@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion '30.0.2'
+    lintOptions {
+        abortOnError false
+    }
+    defaultConfig {
+        applicationId "com.appnexus.example.simplevideo"
+        minSdkVersion 16
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main.manifest.srcFile 'src/main/AndroidManifest.xml'
+        main.java.srcDir 'src/main/java'
+        main.res.srcDir 'src/main/res'
+        main.resources.srcDir 'src/main/java'
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    api project(':instreamvideo')
+    // For setting AAID in ad request
+    implementation "com.google.android.gms:play-services-base:17.3.0"
+    implementation "com.google.android.gms:play-services-ads:19.2.0"
+}

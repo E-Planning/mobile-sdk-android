@@ -1,0 +1,19 @@
+R_DEF: Internal format may change without notice
+local
+string app_name
+string instream_License
+string instream_action_cant_be_completed
+string instream_allow
+string instream_back
+string instream_deny
+string instream_forward
+string instream_html5_geo_permission_prompt
+string instream_html5_geo_permission_prompt_title
+string instream_loading
+string instream_native_tag
+string instream_open_browser
+string instream_refresh
+string instream_store_picture_accept
+string instream_store_picture_decline
+string instream_store_picture_message
+string instream_store_picture_title

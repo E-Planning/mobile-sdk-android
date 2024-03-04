@@ -95,7 +95,7 @@ public abstract class HTTPGet {
         HTTPResponse out = new HTTPResponse();
         HttpURLConnection connection = null;
         try {
-            Clog.e(Clog.httpReqLogTag,"test nico :" + getUrl());
+
 
             URL reqUrl = new URL(getUrl());
             if (reqUrl.getHost() == null) {

@@ -1,0 +1,11 @@
+include ':sdk'
+project(':sdk').projectDir = new File(settingsDir, '../../sdk')
+
+include ':instreamvideo'
+project(':instreamvideo').projectDir = new File(settingsDir, '../../instreamvideo')
+
+include ':GooglePlay'
+include ':SmartAdServer'
+
+include ':FacebookCSR'
+project(':FacebookCSR').projectDir = new File(settingsDir, '../../csr/Facebook')

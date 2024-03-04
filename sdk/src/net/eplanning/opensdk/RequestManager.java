@@ -80,9 +80,7 @@ public abstract class RequestManager implements UTAdRequester {
     }
 
     protected void fireTracker(final String trackerUrl, final String trackerType) {
-        Clog.i(Clog.baseLogTag," TEST FIRETRACKER 1: " + trackerUrl + "    :   " + trackerType);
         if ((trackerUrl == null) || trackerUrl == "") return;
-        Clog.i(Clog.baseLogTag," TEST FIRETRACKER 2");
         HTTPGet fireTracker = new HTTPGet() {
             @Override
             protected void onPostExecute(HTTPResponse response) {
@@ -101,7 +99,6 @@ public abstract class RequestManager implements UTAdRequester {
                 return trackerUrl;
             }
         };
-        Clog.i(Clog.baseLogTag," TEST FIRETRACKER 4");
         fireTracker.execute();
     }
 
