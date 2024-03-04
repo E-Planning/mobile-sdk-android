@@ -1,9 +1,5 @@
-Appnexus Android SDK
+E-Planning Android SDK
 ==================
 
 See our documentation on our wiki at
-https://docs.xandr.com/bundle/mobile-sdk/page/xandr-mobile-sdks.html
-
-Get the latest release notes here: https://github.com/appnexus/mobile-sdk-android/releases
-
-To file an issue or request an enhancement please visit the AppNexus Customer Support Portal (https://support.appnexus.com). **We do not accept GitHub issues.**
+[https://docs.xandr.com/bundle/mobile-sdk/page/xandr-mobile-sdks.html](https://wiki.e-planning.net/wiki/spaces/ENG/pages/1107296257/Android+SDK)
