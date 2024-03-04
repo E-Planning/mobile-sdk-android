@@ -1,0 +1,64 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3   Copyright 2013 APPNEXUS INC
+4
+5   Licensed under the Apache License, Version 2.0 (the "License");
+6   you may not use this file except in compliance with the License.
+7   You may obtain a copy of the License at
+8
+9       http://www.apache.org/licenses/LICENSE-2.0
+10
+11   Unless required by applicable law or agreed to in writing, software
+12   distributed under the License is distributed on an "AS IS" BASIS,
+13   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14   See the License for the specific language governing permissions and
+15   limitations under the License.
+16-->
+17<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+18    package="net.eplanning.opensdk" >
+19
+20    <uses-sdk android:minSdkVersion="14" />
+21
+22    <uses-permission android:name="android.permission.INTERNET" />
+22-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:19:5-67
+22-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:19:22-64
+23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+23-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:20:5-79
+23-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:20:22-76
+24    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+24-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:21:5-76
+24-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:21:22-73
+25    <!-- Required permissions for Advertising Id -->
+26    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+26-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:23:5-79
+26-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:23:22-76
+27
+28    <queries>
+28-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:25:9-32:19
+29        <intent>
+29-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:26:13-28:22
+30            <action android:name="android.intent.action.VIEW" />
+30-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:27:17-69
+30-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:27:25-66
+31        </intent>
+32        <intent>
+32-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:29:13-31:22
+33            <action android:name="android.intent.action.EDIT" />
+33-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:30:17-69
+33-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:30:25-66
+34        </intent>
+35    </queries>
+36
+37    <application>
+37-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:34:5-38:19
+38        <activity
+38-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:35:9-37:90
+39            android:name="net.eplanning.opensdk.AdActivity"
+39-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:35:19-66
+40            android:configChanges="orientation|screenLayout|screenSize|keyboardHidden"
+40-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:37:13-87
+41            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+41-->/Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:36:13-71
+42    </application>
+43
+44</manifest>

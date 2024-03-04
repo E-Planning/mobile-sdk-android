@@ -1,0 +1,101 @@
+/*
+ *    Copyright 2019 APPNEXUS INC
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package net.eplanning.opensdk.shadows;
+
+import android.webkit.ValueCallback;
+import android.webkit.WebView;
+
+import net.eplanning.opensdk.util.TestUtil;
+import net.eplanning.opensdk.utils.Clog;
+
+import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Implements;
+import org.robolectric.shadows.ShadowWebView;
+
+
+@Implements(value = WebView.class, callThroughByDefault = true)
+public class  ShadowOMIDNativeWebView extends ShadowWebView {
+
+    private WebView webView;
+    public static String omidInitString = "";
+    public static String omidImpressionString = "";
+    public static String omidStartSession = "";
+    public static String omidFinishSession = "";
+
+    /*
+     * OMID events call evaluateJavascript so its possible to store the values here and assert them against expected values.
+     */
+    @Override
+    protected void evaluateJavascript(String script, ValueCallback<String> callback) {
+        super.evaluateJavascript(script, callback);
+        webView = new WebView(RuntimeEnvironment.application);
+        Clog.e(TestUtil.testLogTag, "ShadowOMIDNativeWebView evaluateJavascript::"+script);
+        if(script.contains("omidBridge.init")){
+            omidInitString = script;
+        }
+
+        if(script.contains("omidBridge.startSession")){
+            omidStartSession = script;
+        }
+
+        if(script.contains("publishImpressionEvent")){
+            omidImpressionString = script;
+        }
+
+        if(script.contains(".finishSession")){
+            omidFinishSession = script;
+        }
+    }
+
+    /*
+     * OMID events do not make a call to loadUrl as of version 1.4.3 and later.
+     */
+    /*@Override
+    public void loadUrl(String url) {
+        super.loadUrl(url);
+        webView = new WebView(RuntimeEnvironment.application);
+        Clog.e(TestUtil.testLogTag, "ShadowOMIDNativeWebView loadUrl::"+url);
+        if(url.contains("omidBridge.init")){
+            omidInitString = url;
+        }
+
+        if(url.contains("omidBridge.startSession")){
+            omidStartSession = url;
+        }
+
+        if(url.contains("publishImpressionEvent")){
+            omidImpressionString = url;
+        }
+
+        if(url.contains(".finishSession()")){
+            omidFinishSession = url;
+        }
+    }*/
+
+
+    /*
+     * This makes it possible for onAdLoaded on Banner to be called
+     */
+    @Override
+    public void loadDataWithBaseURL(String baseUrl, String data, String mimeType, String encoding, String historyUrl) {
+        super.loadDataWithBaseURL(baseUrl, data, mimeType, encoding, historyUrl);
+        if(webView == null) {
+            webView = new WebView(RuntimeEnvironment.application);
+        }
+        Clog.d(TestUtil.testLogTag, "ShadowOMIDNativeWebView loadDataWithBaseURL");
+        this.getWebViewClient().onPageFinished(webView,baseUrl);
+    }
+}

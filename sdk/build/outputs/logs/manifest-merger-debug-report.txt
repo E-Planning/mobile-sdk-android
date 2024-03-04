@@ -1,0 +1,57 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:16:1-39:12
+INJECTED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:16:1-39:12
+	package
+		ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:17:5-36
+		INJECTED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:16:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:19:5-67
+	android:name
+		ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:19:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:20:5-79
+	android:name
+		ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:20:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:21:5-76
+	android:name
+		ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:21:22-73
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:23:22-76
+queries
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:25:9-32:19
+intent#action:name:android.intent.action.VIEW
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:26:13-28:22
+action#android.intent.action.VIEW
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:27:17-69
+	android:name
+		ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:27:25-66
+intent#action:name:android.intent.action.EDIT
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:29:13-31:22
+action#android.intent.action.EDIT
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:30:17-69
+	android:name
+		ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:30:25-66
+application
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:34:5-38:19
+activity#net.eplanning.opensdk.AdActivity
+ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:35:9-37:90
+	android:configChanges
+		ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:37:13-87
+	android:theme
+		ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:36:13-71
+	android:name
+		ADDED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml:35:19-66
+uses-sdk
+INJECTED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml
+INJECTED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/nicolasdigrazia/test_agus/mobile-sdk-android/sdk/AndroidManifest.xml
